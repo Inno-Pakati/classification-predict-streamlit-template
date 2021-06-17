@@ -84,7 +84,10 @@ def main():
     """,
 	unsafe_allow_html=True)
 
-		# You can read a markdown file from supporting resources folder
+	#empty space
+		st.text("")
+
+	# You can read a markdown file from supporting resources folder
 		st.markdown("""
 		Many companies are built around lessening one's environmental impact or carbon foot print. They offer products and services 
 		that are environmentally friendly and sustainable, in line with their values and ideals. 
@@ -114,6 +117,7 @@ def main():
 		st.markdown("""
 		Meet our exceptionally talented "A" team🏆.
 		""" )
+		st.text("")
 		st.markdown("""Jean-Luc van Zyl""" )
 		st.markdown("""Noluthando Ntsangani""" )
 		st.markdown("""Sung Hyu Kim""" )
