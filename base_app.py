@@ -66,8 +66,8 @@ def main():
 
 	# Creates a main title and subheader on your page -
 	# these are static across all pages
-	st.title("Tweet Classifer")
-	st.subheader("Climate change tweet classification")
+	st.title("Climate Change Analysis")
+	st.subheader("Text Classification on Twitter Messages")
 
 	# Creating sidebar with selection box -
 	# you can create multiple pages this way
@@ -121,7 +121,7 @@ def main():
 		st.markdown("""Jean-Luc van Zyl""" )
 		st.markdown("""Noluthando Ntsangani""" )
 		st.markdown("""Sung Hyu Kim""" )
-		st.markdown("""Innocentia Pakati""" )
+		st.markdown("""Innocentia Pakati""")
 		st.markdown("""Hlulani Nkonyani""" )
 
 
