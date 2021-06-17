@@ -37,7 +37,7 @@ tweet_cv = joblib.load(news_vectorizer) # loading your vectorizer from the pkl f
 raw = pd.read_csv("resources/train.csv")
 
 #logo
-LOGO_IMAGE = "Images/download.jpg"
+LOGO_IMAGE = "Images/pic.jpg"
 
 st.markdown(
     """
