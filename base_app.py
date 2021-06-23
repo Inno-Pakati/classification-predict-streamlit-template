@@ -176,17 +176,17 @@ def main():
 
         ### Classify Tweet
         if source_selection == 'Classify Tweet':
-            input_text = st.text_area('Enter Text (max. 120 characters)') ##user entering a single text to classify and predict
+            input_text = st.text_area('Enter Text (max. 120 characters)') 
             all_ml_models = ["Select Option","LSVC"]
             model_choice = st.selectbox("Classify Tweet",all_ml_models)
 
             prediction_labels = {'Negative':-1,'Neutral':0,'Positive':1,'News':2}
-             
             if st.button('Classify'):
+
                 st.text("Original test ::\n{}".format(input_text))
                 text1 = cleaner(input_text) 
                 vect_text = tweet_cv.transform([text1]).toarray()
-                #first Model Prediction
+             
                 if model_choice == 'LSVC':
                     predictor = load_prediction_models("resources/lsvc_model.pkl")
                     prediction = predictor.predict(vect_text)
@@ -194,7 +194,6 @@ def main():
                 final_result = get_keys(prediction,prediction_labels)
                 st.success("Tweet Categorized as:: {}".format(final_result))
         
-        # data classification
         if source_selection == 'Classify Dataset':
             all_ml_models = ["Select Option","LSVC"]
             model_choice = st.selectbox("Classify Dataset",all_ml_models)
@@ -211,8 +210,9 @@ def main():
             col = st.text_area('Enter column to classify')
 
             if st.button("Classify"):
+
                 st.text("Original test ::\n{}".format(text_input))
-                text2 = text_input[col].apply(cleaner) ###passing the text through the 'cleaner' function
+                text2 = text_input[col].apply(cleaner)
                 vect_text = tweet_cv.transform([text2]).toarray()
 
                 if model_choice == 'LSVC':
@@ -225,7 +225,7 @@ def main():
                 st.success("Tweets Categorized as:: {}".format(final_result))
 
                 
-                csv = text_input.to_csv(index=False)
+                csv = text_input.to_csv(index=True)
                 b64 = base64.b64encode(csv.encode()).decode()
                 href = f'<a href="data:file/csv;base64,{b64}">Download csv file</a>'
                 st.markdown(href, unsafe_allow_html=True)
