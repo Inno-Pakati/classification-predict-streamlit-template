@@ -219,7 +219,6 @@ def main():
                     predictor = load_prediction_models("resources/lsvc_model.pkl")
                     prediction = predictor.predict(vect_text)
 
-                #st.write(prediction)
                 text_input['sentiment'] = prediction
                 final_result = get_keys(prediction,prediction_labels)
                 st.success("Tweets Categorized as:: {}".format(final_result))
